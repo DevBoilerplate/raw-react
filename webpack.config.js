@@ -1,37 +1,42 @@
-const webpack = require("webpack")
-const path = require("path")
-const HTMLWebpackPlugin = require("html-webpack-plugin")
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/index",
+    output: {
+        path: path.resolve(__dirname, "build"),
+        filename: "bundle.js",
+    },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".json"],
+    },
+    mode: "development",
     module: {
         rules: [
             {
                 test: /\.ts(x)?$/,
                 exclude: /node_modules/,
-                use: ["babel-loader", "ts-loader"],
+                loader: "babel-loader",
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: ["style-loader", "css-loader", "less-loader"],
             },
         ],
-    },
-    resolve: {
-        extensions: ["tsx", "ts"],
-    },
-    output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: "/",
-        filename: "bundle.js",
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: path.join(__dirname, "./public/index.html"),
+            filename: "index.html",
         }),
-        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
         host: "127.0.0.1",
         port: 3000,
-        contentBase: "./build",
-        hot: true,
+        contentBase: "build",
+        inline: true,
         open: true,
+        hot: true,
     },
-}
+};
