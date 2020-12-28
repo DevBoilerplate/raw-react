@@ -7,8 +7,10 @@
 - [x] 支持`webpack5`
 - [x] 支持typescript
 - [x] 使用`babel`编译`typescript`
+- [x] 支持静态文件导入
 - [ ] 支持Tree Shaking
-- [ ] 支持HMR
+- [x] 支持HMR[React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- [ ] 支持prettier限制代码风格
 - [ ] 支持路由
 - [ ] 支持eslint
 - [ ] 支持commit规范限制

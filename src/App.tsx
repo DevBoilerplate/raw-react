@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { hot } from "react-hot-loader/root"
 
-import "./App.less";
+import { FC } from "react"
+import "./App.less"
 
 const App: FC = () => (
     <div className="app-container">
@@ -10,6 +11,7 @@ const App: FC = () => (
             色彩来源于<a href="http://zhongguose.com/#meihong">中国色</a>
         </p>
     </div>
-);
+)
 
-export default App;
+// HMR
+export default hot(App)
