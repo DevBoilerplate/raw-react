@@ -13,4 +13,4 @@
 - [x] 支持prettier限制代码风格
 - [ ] 支持路由
 - [ ] 支持eslint
-- [ ] 支持commit规范限制
+- [x] 支持commit规范限制
