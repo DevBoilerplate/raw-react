@@ -1,5 +1,6 @@
 const path = require("path")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
+const ESLintPlugin = require("eslint-webpack-plugin")
 
 // 抽离CSS插件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -66,6 +67,11 @@ module.exports = {
             filename: "index.html",
         }),
         new MiniCssExtractPlugin(),
+        new ESLintPlugin({
+            context: "src",
+            extensions: ["ts", "tsx"],
+            exclude: ["node_modules", "build"],
+        }),
     ],
     devServer: {
         host: "127.0.0.1",
