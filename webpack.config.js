@@ -1,9 +1,14 @@
 const path = require("path")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
 const ESLintPlugin = require("eslint-webpack-plugin")
+const WebpackBar = require("webpackbar")
 
 // 抽离CSS插件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
+// 打包大小可视化插件
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+//     .BundleAnalyzerPlugin
 
 module.exports = {
     mode: "development",
@@ -72,6 +77,8 @@ module.exports = {
             extensions: ["ts", "tsx"],
             exclude: ["node_modules", "build"],
         }),
+        new WebpackBar(),
+        // new BundleAnalyzerPlugin(),
     ],
     devServer: {
         host: "127.0.0.1",
