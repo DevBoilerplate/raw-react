@@ -65,5 +65,13 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
+  },
+  "browserslist": {
+    "production": [
+      "> 0.5%"
+    ],
+    "modern": [
+      "last 2 versions"
+    ]
   }
 }

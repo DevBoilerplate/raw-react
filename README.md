@@ -24,3 +24,4 @@
 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 - [DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.](https://github.com/webpack/webpack/issues/11997)
+- [browserslist](https://github.com/browserslist/browserslist)
